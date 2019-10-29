@@ -12,7 +12,8 @@ Features
 ------
 - Interface discovery
   - Interface utilization and triggers
-- Hardware discovery
+- Hardware discovery + triggers
+- BGP discovery + trigger
 
 
 Macros
