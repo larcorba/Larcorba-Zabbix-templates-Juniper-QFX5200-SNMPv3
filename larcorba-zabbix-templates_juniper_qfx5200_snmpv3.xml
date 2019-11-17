@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.4</version>
-    <date>2019-10-29T07:53:33Z</date>
+    <date>2019-11-17T16:21:14Z</date>
     <groups>
         <group>
-            <name>Networking Hardware</name>
-        </group>
-        <group>
-            <name>Templates</name>
+            <name>Networking Hardware SNMPv3</name>
         </group>
     </groups>
     <templates>
@@ -21,10 +18,7 @@
             </templates>
             <groups>
                 <group>
-                    <name>Networking Hardware</name>
-                </group>
-                <group>
-                    <name>Templates</name>
+                    <name>Networking Hardware SNMPv3</name>
                 </group>
             </groups>
             <applications>
@@ -38,10 +32,121 @@
                     <name>Interfaces</name>
                 </application>
                 <application>
+                    <name>Inventory</name>
+                </application>
+                <application>
+                    <name>Optics</name>
+                </application>
+                <application>
                     <name>Performance</name>
                 </application>
             </applications>
             <items>
+                <item>
+                    <name>JunOS Inventory - Hardware</name>
+                    <type>SNMPV3</type>
+                    <snmp_oid>1.3.6.1.4.1.2636.3.40.1.4.1.1.1.8.0</snmp_oid>
+                    <key>INVHardware</key>
+                    <delay>30m</delay>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <snmpv3_securityname>{$JUN_V3_USER}</snmpv3_securityname>
+                    <snmpv3_securitylevel>AUTHPRIV</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>SHA</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_authpassphrase>
+                    <snmpv3_privprotocol>AES</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_privpassphrase>
+                    <inventory_link>HARDWARE</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Inventory</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>JunOS Inventory - Hostname</name>
+                    <type>SNMPV3</type>
+                    <snmp_oid>1.3.6.1.2.1.1.5.0</snmp_oid>
+                    <key>INVName</key>
+                    <delay>30m</delay>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <snmpv3_securityname>{$JUN_V3_USER}</snmpv3_securityname>
+                    <snmpv3_securitylevel>AUTHPRIV</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>SHA</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_authpassphrase>
+                    <snmpv3_privprotocol>AES</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_privpassphrase>
+                    <inventory_link>NAME</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Inventory</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>JunOS Inventory - Serial Number 0</name>
+                    <type>SNMPV3</type>
+                    <snmp_oid>1.3.6.1.4.1.2636.3.40.1.4.1.1.1.2.0</snmp_oid>
+                    <key>INVSerial0</key>
+                    <delay>30m</delay>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <snmpv3_securityname>{$JUN_V3_USER}</snmpv3_securityname>
+                    <snmpv3_securitylevel>AUTHPRIV</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>SHA</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_authpassphrase>
+                    <snmpv3_privprotocol>AES</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_privpassphrase>
+                    <inventory_link>SERIALNO_A</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Inventory</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>JunOS Inventory - Serial Number 1</name>
+                    <type>SNMPV3</type>
+                    <snmp_oid>1.3.6.1.4.1.2636.3.40.1.4.1.1.1.2.1</snmp_oid>
+                    <key>INVSerial1</key>
+                    <delay>30m</delay>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <snmpv3_securityname>{$JUN_V3_USER}</snmpv3_securityname>
+                    <snmpv3_securitylevel>AUTHPRIV</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>SHA</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_authpassphrase>
+                    <snmpv3_privprotocol>AES</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_privpassphrase>
+                    <inventory_link>SERIALNO_B</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Inventory</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>JunOS Inventory - Software</name>
+                    <type>SNMPV3</type>
+                    <snmp_oid>1.3.6.1.2.1.54.1.1.1.1.4</snmp_oid>
+                    <key>INVSoftware</key>
+                    <delay>30m</delay>
+                    <trends>0</trends>
+                    <value_type>CHAR</value_type>
+                    <snmpv3_securityname>{$JUN_V3_USER}</snmpv3_securityname>
+                    <snmpv3_securitylevel>AUTHPRIV</snmpv3_securitylevel>
+                    <snmpv3_authprotocol>SHA</snmpv3_authprotocol>
+                    <snmpv3_authpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_authpassphrase>
+                    <snmpv3_privprotocol>AES</snmpv3_privprotocol>
+                    <snmpv3_privpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_privpassphrase>
+                    <inventory_link>OS</inventory_link>
+                    <applications>
+                        <application>
+                            <name>Inventory</name>
+                        </application>
+                    </applications>
+                </item>
                 <item>
                     <name>Red alarm</name>
                     <type>SNMPV3</type>
@@ -136,7 +241,7 @@
             </items>
             <discovery_rules>
                 <discovery_rule>
-                    <name>Junos BGP</name>
+                    <name>JunOS BGP</name>
                     <type>SNMPV3</type>
                     <snmp_oid>discovery[{#BGPPEER},1.3.6.1.2.1.15.3.1.7]</snmp_oid>
                     <key>discovery.bgp</key>
@@ -268,7 +373,7 @@
                         <conditions>
                             <condition>
                                 <macro>{#IFNAME}</macro>
-                                <value>^(fe|ge|xe|et)-[0-9]+\/[0-9]+\/[0-9]+\.[0-9]+$|^(fe|ge|xe|et)-[0-9]+\/[0-9]+\/[0-9]+$|^(ae|reth|st)[0-9]+\.[0-9]+$|^(ae|reth|st)[0-9]$|^vcp-[0-9]+$|^vlan.[0-9]+$</value>
+                                <value>^(fe|ge|xe|et)-[0-9]+\/[0-9]+\/[0-9]+$|^(fe|ge|xe|et)-[0-9]+\/[0-9]+\/[0-9]+$|^(reth|st)[0-9]+$|^(reth|st)[0-9]$|^vcp-[0-9]+$|^vlan.[0-9]+$</value>
                                 <formulaid>A</formulaid>
                             </condition>
                         </conditions>
@@ -551,6 +656,246 @@
                                 </application>
                             </applications>
                         </item_prototype>
+                        <item_prototype>
+                            <name>{#IFNAME} - Current Laser Rx Power Lane 0</name>
+                            <type>SNMPV3</type>
+                            <snmp_oid>.1.3.6.1.4.1.2636.3.60.1.2.1.1.6.{#SNMPINDEX}.0</snmp_oid>
+                            <key>discovery.ifCurrentRx0.[{#SNMPINDEX}]</key>
+                            <delay>5m</delay>
+                            <history>2w</history>
+                            <value_type>FLOAT</value_type>
+                            <units>dBm</units>
+                            <snmpv3_securityname>{$JUN_V3_USER}</snmpv3_securityname>
+                            <snmpv3_securitylevel>AUTHPRIV</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>SHA</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_authpassphrase>
+                            <snmpv3_privprotocol>AES</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_privpassphrase>
+                            <applications>
+                                <application>
+                                    <name>Interfaces</name>
+                                </application>
+                                <application>
+                                    <name>Optics</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <params>0.01</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#IFNAME} - Current Laser Rx Power Lane 1</name>
+                            <type>SNMPV3</type>
+                            <snmp_oid>.1.3.6.1.4.1.2636.3.60.1.2.1.1.6.{#SNMPINDEX}.1</snmp_oid>
+                            <key>discovery.ifCurrentRx1.[{#SNMPINDEX}]</key>
+                            <delay>5m</delay>
+                            <history>2w</history>
+                            <value_type>FLOAT</value_type>
+                            <units>dBm</units>
+                            <snmpv3_securityname>{$JUN_V3_USER}</snmpv3_securityname>
+                            <snmpv3_securitylevel>AUTHPRIV</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>SHA</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_authpassphrase>
+                            <snmpv3_privprotocol>AES</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_privpassphrase>
+                            <applications>
+                                <application>
+                                    <name>Interfaces</name>
+                                </application>
+                                <application>
+                                    <name>Optics</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <params>0.01</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#IFNAME} - Current Laser Rx Power Lane 2</name>
+                            <type>SNMPV3</type>
+                            <snmp_oid>.1.3.6.1.4.1.2636.3.60.1.2.1.1.6.{#SNMPINDEX}.2</snmp_oid>
+                            <key>discovery.ifCurrentRx2.[{#SNMPINDEX}]</key>
+                            <delay>5m</delay>
+                            <history>2w</history>
+                            <value_type>FLOAT</value_type>
+                            <units>dBm</units>
+                            <snmpv3_securityname>{$JUN_V3_USER}</snmpv3_securityname>
+                            <snmpv3_securitylevel>AUTHPRIV</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>SHA</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_authpassphrase>
+                            <snmpv3_privprotocol>AES</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_privpassphrase>
+                            <applications>
+                                <application>
+                                    <name>Interfaces</name>
+                                </application>
+                                <application>
+                                    <name>Optics</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <params>0.01</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#IFNAME} - Current Laser Rx Power Lane 3</name>
+                            <type>SNMPV3</type>
+                            <snmp_oid>.1.3.6.1.4.1.2636.3.60.1.2.1.1.6.{#SNMPINDEX}.3</snmp_oid>
+                            <key>discovery.ifCurrentRx3.[{#SNMPINDEX}]</key>
+                            <delay>5m</delay>
+                            <history>2w</history>
+                            <value_type>FLOAT</value_type>
+                            <units>dBm</units>
+                            <snmpv3_securityname>{$JUN_V3_USER}</snmpv3_securityname>
+                            <snmpv3_securitylevel>AUTHPRIV</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>SHA</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_authpassphrase>
+                            <snmpv3_privprotocol>AES</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_privpassphrase>
+                            <applications>
+                                <application>
+                                    <name>Interfaces</name>
+                                </application>
+                                <application>
+                                    <name>Optics</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <params>0.01</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#IFNAME} - Current Laser Tx Power Lane 0</name>
+                            <type>SNMPV3</type>
+                            <snmp_oid>.1.3.6.1.4.1.2636.3.60.1.2.1.1.8.{#SNMPINDEX}.0</snmp_oid>
+                            <key>discovery.ifCurrentTx0.[{#SNMPINDEX}]</key>
+                            <delay>5m</delay>
+                            <history>2w</history>
+                            <value_type>FLOAT</value_type>
+                            <units>dBm</units>
+                            <snmpv3_securityname>{$JUN_V3_USER}</snmpv3_securityname>
+                            <snmpv3_securitylevel>AUTHPRIV</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>SHA</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_authpassphrase>
+                            <snmpv3_privprotocol>AES</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_privpassphrase>
+                            <applications>
+                                <application>
+                                    <name>Interfaces</name>
+                                </application>
+                                <application>
+                                    <name>Optics</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <params>0.01</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#IFNAME} - Current Laser Tx Power Lane 1</name>
+                            <type>SNMPV3</type>
+                            <snmp_oid>.1.3.6.1.4.1.2636.3.60.1.2.1.1.8.{#SNMPINDEX}.1</snmp_oid>
+                            <key>discovery.ifCurrentTx1.[{#SNMPINDEX}]</key>
+                            <delay>5m</delay>
+                            <history>2w</history>
+                            <value_type>FLOAT</value_type>
+                            <units>dBm</units>
+                            <snmpv3_securityname>{$JUN_V3_USER}</snmpv3_securityname>
+                            <snmpv3_securitylevel>AUTHPRIV</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>SHA</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_authpassphrase>
+                            <snmpv3_privprotocol>AES</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_privpassphrase>
+                            <applications>
+                                <application>
+                                    <name>Interfaces</name>
+                                </application>
+                                <application>
+                                    <name>Optics</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <params>0.01</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#IFNAME} - Current Laser Tx Power Lane 2</name>
+                            <type>SNMPV3</type>
+                            <snmp_oid>.1.3.6.1.4.1.2636.3.60.1.2.1.1.8.{#SNMPINDEX}.2</snmp_oid>
+                            <key>discovery.ifCurrentTx2.[{#SNMPINDEX}]</key>
+                            <delay>5m</delay>
+                            <history>2w</history>
+                            <value_type>FLOAT</value_type>
+                            <units>dBm</units>
+                            <snmpv3_securityname>{$JUN_V3_USER}</snmpv3_securityname>
+                            <snmpv3_securitylevel>AUTHPRIV</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>SHA</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_authpassphrase>
+                            <snmpv3_privprotocol>AES</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_privpassphrase>
+                            <applications>
+                                <application>
+                                    <name>Interfaces</name>
+                                </application>
+                                <application>
+                                    <name>Optics</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <params>0.01</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#IFNAME} - Current Laser Tx Power Lane 3</name>
+                            <type>SNMPV3</type>
+                            <snmp_oid>.1.3.6.1.4.1.2636.3.60.1.2.1.1.8.{#SNMPINDEX}.3</snmp_oid>
+                            <key>discovery.ifCurrentTx3.[{#SNMPINDEX}]</key>
+                            <delay>5m</delay>
+                            <history>2w</history>
+                            <value_type>FLOAT</value_type>
+                            <units>dBm</units>
+                            <snmpv3_securityname>{$JUN_V3_USER}</snmpv3_securityname>
+                            <snmpv3_securitylevel>AUTHPRIV</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>SHA</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_authpassphrase>
+                            <snmpv3_privprotocol>AES</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_privpassphrase>
+                            <applications>
+                                <application>
+                                    <name>Interfaces</name>
+                                </application>
+                                <application>
+                                    <name>Optics</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <params>0.01</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
                     </item_prototypes>
                     <trigger_prototypes>
                         <trigger_prototype>
@@ -692,6 +1037,278 @@ Interface : {#SNMPVALUE}, {ITEM.VALUE1} = {ITEM.VALUE3}</description>
                         </conditions>
                     </filter>
                     <lifetime>0d</lifetime>
+                    <item_prototypes>
+                        <item_prototype>
+                            <name>{#IFNAME} - Interface Admin Status</name>
+                            <type>SNMPV3</type>
+                            <snmp_oid>1.3.6.1.2.1.2.2.1.7.{#SNMPINDEX}</snmp_oid>
+                            <key>ifAdminStatusAE.[{#IFNAME}]</key>
+                            <delay>3m</delay>
+                            <snmpv3_securityname>{$JUN_V3_USER}</snmpv3_securityname>
+                            <snmpv3_securitylevel>AUTHPRIV</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>SHA</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_authpassphrase>
+                            <snmpv3_privprotocol>AES</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_privpassphrase>
+                            <applications>
+                                <application>
+                                    <name>Interfaces</name>
+                                </application>
+                            </applications>
+                            <valuemap>
+                                <name>SNMP interface status (ifAdminStatus)</name>
+                            </valuemap>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#IFNAME} - Interface Alias</name>
+                            <type>SNMPV3</type>
+                            <snmp_oid>1.3.6.1.2.1.31.1.1.1.18.{#SNMPINDEX}</snmp_oid>
+                            <key>ifAliasAE.[{#IFNAME}]</key>
+                            <delay>10m</delay>
+                            <trends>0</trends>
+                            <value_type>CHAR</value_type>
+                            <snmpv3_securityname>{$JUN_V3_USER}</snmpv3_securityname>
+                            <snmpv3_securitylevel>AUTHPRIV</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>SHA</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_authpassphrase>
+                            <snmpv3_privprotocol>AES</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_privpassphrase>
+                            <applications>
+                                <application>
+                                    <name>Interfaces</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#IFNAME} - Inbound discarded packets</name>
+                            <type>SNMPV3</type>
+                            <snmp_oid>.1.3.6.1.2.1.2.2.1.13.{#SNMPINDEX}</snmp_oid>
+                            <key>ifInboundDiscardAE.[{#SNMPINDEX}]</key>
+                            <delay>5m</delay>
+                            <history>2w</history>
+                            <snmpv3_securityname>{$JUN_V3_USER}</snmpv3_securityname>
+                            <snmpv3_securitylevel>AUTHPRIV</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>SHA</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_authpassphrase>
+                            <snmpv3_privprotocol>AES</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_privpassphrase>
+                            <applications>
+                                <application>
+                                    <name>Interfaces</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#IFNAME} - Inbound errors</name>
+                            <type>SNMPV3</type>
+                            <snmp_oid>1.3.6.1.2.1.2.2.1.14.{#SNMPINDEX}</snmp_oid>
+                            <key>ifInboundErrorsAE.[{#SNMPINDEX}]</key>
+                            <delay>5m</delay>
+                            <history>2w</history>
+                            <snmpv3_securityname>{$JUN_V3_USER}</snmpv3_securityname>
+                            <snmpv3_securitylevel>AUTHPRIV</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>SHA</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_authpassphrase>
+                            <snmpv3_privprotocol>AES</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_privpassphrase>
+                            <port>161</port>
+                            <applications>
+                                <application>
+                                    <name>Interfaces</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#IFNAME} - Inbound traffic</name>
+                            <type>SNMPV3</type>
+                            <snmp_oid>1.3.6.1.2.1.2.2.1.10.{#SNMPINDEX}</snmp_oid>
+                            <key>ifInboundTraffic.[{#SNMPINDEX}]</key>
+                            <delay>5m</delay>
+                            <history>2w</history>
+                            <value_type>FLOAT</value_type>
+                            <units>bps</units>
+                            <snmpv3_securityname>{$JUN_V3_USER}</snmpv3_securityname>
+                            <snmpv3_securitylevel>AUTHPRIV</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>SHA</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_authpassphrase>
+                            <snmpv3_privprotocol>AES</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_privpassphrase>
+                            <applications>
+                                <application>
+                                    <name>Interfaces</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <params>8</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#IFNAME} - Interface Name</name>
+                            <type>SNMPV3</type>
+                            <snmp_oid>1.3.6.1.2.1.31.1.1.1.1.{#SNMPINDEX}</snmp_oid>
+                            <key>ifNameAE.[{#IFNAME}]</key>
+                            <delay>3600</delay>
+                            <trends>0</trends>
+                            <value_type>CHAR</value_type>
+                            <snmpv3_securityname>{$JUN_V3_USER}</snmpv3_securityname>
+                            <snmpv3_securitylevel>AUTHPRIV</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>SHA</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_authpassphrase>
+                            <snmpv3_privprotocol>AES</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_privpassphrase>
+                            <applications>
+                                <application>
+                                    <name>Interfaces</name>
+                                </application>
+                            </applications>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#IFNAME} - Interface Operation Status</name>
+                            <type>SNMPV3</type>
+                            <snmp_oid>1.3.6.1.2.1.2.2.1.8.{#SNMPINDEX}</snmp_oid>
+                            <key>ifOperStatus.[{#IFNAME}]</key>
+                            <history>2w</history>
+                            <snmpv3_securityname>{$JUN_V3_USER}</snmpv3_securityname>
+                            <snmpv3_securitylevel>AUTHPRIV</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>SHA</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_authpassphrase>
+                            <snmpv3_privprotocol>AES</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_privpassphrase>
+                            <applications>
+                                <application>
+                                    <name>Interfaces</name>
+                                </application>
+                            </applications>
+                            <valuemap>
+                                <name>SNMP interface status (ifOperStatus)</name>
+                            </valuemap>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#IFNAME} - Outbound discarded packets</name>
+                            <type>SNMPV3</type>
+                            <snmp_oid>1.3.6.1.2.1.2.2.1.19.{#SNMPINDEX}</snmp_oid>
+                            <key>ifOutboundDiscardAE[{#SNMPINDEX}]</key>
+                            <delay>5m</delay>
+                            <history>2w</history>
+                            <snmpv3_securityname>{$JUN_V3_USER}</snmpv3_securityname>
+                            <snmpv3_securitylevel>AUTHPRIV</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>SHA</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_authpassphrase>
+                            <snmpv3_privprotocol>AES</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_privpassphrase>
+                            <applications>
+                                <application>
+                                    <name>Interfaces</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#IFNAME} - Outbound errors</name>
+                            <type>SNMPV3</type>
+                            <snmp_oid>1.3.6.1.2.1.2.2.1.20.{#SNMPINDEX}</snmp_oid>
+                            <key>ifOutboundErrorsAE.[{#SNMPINDEX}]</key>
+                            <delay>5m</delay>
+                            <history>2w</history>
+                            <snmpv3_securityname>{$JUN_V3_USER}</snmpv3_securityname>
+                            <snmpv3_securitylevel>AUTHPRIV</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>SHA</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_authpassphrase>
+                            <snmpv3_privprotocol>AES</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_privpassphrase>
+                            <applications>
+                                <application>
+                                    <name>Interfaces</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#IFNAME} - Outbound traffic</name>
+                            <type>SNMPV3</type>
+                            <snmp_oid>1.3.6.1.2.1.2.2.1.16.{#SNMPINDEX}</snmp_oid>
+                            <key>ifOutboundTrafficAE.[{#SNMPINDEX}]</key>
+                            <delay>5m</delay>
+                            <history>2w</history>
+                            <value_type>FLOAT</value_type>
+                            <snmpv3_securityname>{$JUN_V3_USER}</snmpv3_securityname>
+                            <snmpv3_securitylevel>AUTHPRIV</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>SHA</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_authpassphrase>
+                            <snmpv3_privprotocol>AES</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_privpassphrase>
+                            <applications>
+                                <application>
+                                    <name>Interfaces</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>CHANGE_PER_SECOND</type>
+                                    <params/>
+                                </step>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <params>8</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>{#IFNAME} - Interface Speed</name>
+                            <type>SNMPV3</type>
+                            <snmp_oid>1.3.6.1.2.1.31.1.1.1.15.{#SNMPINDEX}</snmp_oid>
+                            <key>ifSpeedAE.[{#SNMPINDEX}]</key>
+                            <delay>5m</delay>
+                            <history>2w</history>
+                            <units>bps</units>
+                            <snmpv3_securityname>{$JUN_V3_USER}</snmpv3_securityname>
+                            <snmpv3_securitylevel>AUTHPRIV</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>SHA</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_authpassphrase>
+                            <snmpv3_privprotocol>AES</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase>{$JUN_V3_AUTHPASS}</snmpv3_privpassphrase>
+                            <applications>
+                                <application>
+                                    <name>Interfaces</name>
+                                </application>
+                            </applications>
+                            <preprocessing>
+                                <step>
+                                    <type>MULTIPLIER</type>
+                                    <params>1000000</params>
+                                </step>
+                            </preprocessing>
+                        </item_prototype>
+                    </item_prototypes>
                 </discovery_rule>
                 <discovery_rule>
                     <name>JunOS Hardware</name>
